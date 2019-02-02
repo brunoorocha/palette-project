@@ -68,7 +68,7 @@ export default {
     flex-grow: 1;        
     font-weight: 300;
     font-size: 20px;
-    padding-top: 0;
+    margin-top: 8px;
   }
 
 </style>

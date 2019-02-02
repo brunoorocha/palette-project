@@ -1,5 +1,6 @@
 <template>
-  <div class="page-row">
+  <div class="page-row page-row-vertical">
+    <h1 class="page-section-title">Destaques</h1>
     <div class="product-collection">
       <product-card 
         v-for="(product, index) in products" 
@@ -32,7 +33,7 @@ export default {
   width: 100%;
   column-count: 4;
   column-gap: 32px;
-  margin-top: 32px;  
+  margin-top: 16px;  
 }
 
 .product-collection .collection-item {
@@ -42,6 +43,7 @@ export default {
 
 @media only screen and (max-width: 767px) and (min-width: 540px) {
   .product-collection {
+    column-count: 3;
     column-gap: 16px;
   }
 }

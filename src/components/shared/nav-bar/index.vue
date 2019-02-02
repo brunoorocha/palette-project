@@ -8,7 +8,7 @@
       <div class="nav-item nav-item-right">
         <div class="nav-links">
           <a href="/">login</a>
-          <a href="/"><shopping-cart-icon class="icon" /></a>
+          <a href="/"><shopping-cart-icon class="icon" /><div v-if="cart_badge" class="badge"></div></a>
           <a href="/"><search-icon class="icon" /></a>
         </div>
       </div>
@@ -18,7 +18,7 @@
       <div class="nav-item nav-item-centered">
         <div class="nav-links">
           <router-link v-for="(category, index) in categories" :key="index" :to="category.link">
-            {{ category.name }}
+            {{ category.name }} <chevron-down-icon v-if="category.sub_categories" class="icon icon-dropdown" />
 
             <div v-if="category.sub_categories" class="nav-bar-subsection">
               <div class="nav-item nav-item-centered">
@@ -39,15 +39,16 @@
 </template>
 
 <script>
-import { SearchIcon, ShoppingCartIcon } from 'vue-feather-icons'
+import { SearchIcon, ShoppingCartIcon, ChevronDownIcon } from 'vue-feather-icons'
 
 export default {
   name: 'nav-bar',
   props: {
-    categories: Array
+    categories: Array,
+    cart_badge: Boolean
   },
   components: {
-    SearchIcon, ShoppingCartIcon
+    SearchIcon, ShoppingCartIcon, ChevronDownIcon
   }
 }
 </script>
@@ -128,6 +129,17 @@ export default {
   border-bottom: 2px solid #333333;
 }
 
+.nav-bar .nav-links a .badge {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #e74c3c;
+  position: absolute;  
+  margin-left: 16px;
+  margin-top: -8px;
+}
+
 .nav-bar .nav-links a:hover .nav-bar-subsection{
   display: flex;
 }
@@ -142,6 +154,10 @@ export default {
   fill: none;
 }
 
+.nav-bar .nav-links a .icon-dropdown {    
+  margin-left: 8px;
+}
+
 .nav-bar .nav-bar-section-bottom,  
 .nav-bar .nav-bar-section-bottom .nav-links a  {    
   height: 42px;    
@@ -153,7 +169,7 @@ export default {
   height: 56px;
   padding: 0px 16px;    
   font-size: 16px;    
-  text-transform: capitalize;
+  text-transform: none;
   font-weight: 400;
   text-decoration: none;   
   -moz-transition: .3s ease-out;
@@ -168,11 +184,27 @@ export default {
 
 @media only screen and (max-width: 767px) and (min-width: 540px) {
   .nav-bar .nav-bar-section {    
+    height: 42px;
+  }
+
+  .nav-bar .nav-item-left h1 {
+    font-size: 20px;    
+  }
+
+  .nav-bar .nav-bar-section {    
     padding: 0px; 
   }
 }
 
 @media only screen and (max-width: 540px) {
+  .nav-bar .nav-bar-section {    
+    height: 42px;
+  }
+
+  .nav-bar .nav-item-left h1 {
+    font-size: 20px;    
+  }
+
   .nav-bar .nav-bar-section {    
     padding: 0px; 
   }
