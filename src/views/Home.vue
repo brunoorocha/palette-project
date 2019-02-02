@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <default-page>
+
+    </default-page>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import DefaultPage from '@/components/shared/default-page'
+import { mapState, mapActions } from 'vuex'
 
 export default {
-  name: 'home',
+  name: 'home',  
   components: {
-    HelloWorld
+    DefaultPage
+  },
+  
+  computed: {
+    ...mapState('Product', ['products'])
+  },
+  
+  methods: {
+    ...mapActions('Product', ['setProducts'])
+  },
+
+  mounted: function() {
+    this.setProducts()
   }
 }
 </script>
