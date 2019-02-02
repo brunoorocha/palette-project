@@ -3,7 +3,8 @@
   padding: 0;
 }
 
-#app {
+#app,
+input {
   font-family: 'Lato', sans-serif;
   color: #333333;
 }
@@ -11,11 +12,12 @@
 a {
   font-weight: 700;
   color: #333333;
+  text-decoration: none;
 }
 
 .large-vspace {
   display: flex;
-  height: 100px;
+  height: 98px;
 }
 
 .page-content {

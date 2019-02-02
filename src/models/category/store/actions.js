@@ -61,6 +61,10 @@ const categories = [
         link: '/cabideiros'
       }
     ]
+  },
+  {
+    name: 'Blog',
+    link: '/blog'
   }
 ]
 

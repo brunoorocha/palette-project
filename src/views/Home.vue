@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <default-page :nav_categories="categories">
+    <default-page title="Palette Store">
       <product-collection :products="products" />
     </default-page>
   </div>
@@ -21,18 +21,14 @@ export default {
   
   computed: {
     ...mapState('Product', ['products']),
-    ...mapState('Category', ['categories'])
   },
   
   methods: {
     ...mapActions('Product', ['setProducts']),
-    ...mapActions('Category', ['setCategories'])    
   },
 
   mounted: function() {
-    this.setProducts()
-    this.setCategories()
-    document.title = "Palette Store"
+    this.setProducts()    
   }
 }
 </script>

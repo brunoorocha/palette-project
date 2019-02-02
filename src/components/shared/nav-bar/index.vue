@@ -2,14 +2,17 @@
   <div class="nav-bar">
     <div class="nav-bar-section">
       <div class="nav-item nav-item-left">
-        <h1>Palette Store</h1>
+        <router-link to="/"><h1>Palette Store</h1></router-link>
       </div>
 
       <div class="nav-item nav-item-right">
         <div class="nav-links">
-          <a href="/">login</a>
-          <a href="/"><shopping-cart-icon class="icon" /><div v-if="cart_badge" class="badge"></div></a>
-          <a href="/"><search-icon class="icon" /></a>
+          <router-link to="login">login</router-link>
+          <router-link to="cart">
+            <shopping-cart-icon class="icon" />
+            <div v-if="cart_badge" class="badge"></div>
+          </router-link>          
+          <search-bar />          
         </div>
       </div>
     </div>
@@ -40,15 +43,21 @@
 
 <script>
 import { SearchIcon, ShoppingCartIcon, ChevronDownIcon } from 'vue-feather-icons'
+import SearchBar from '../search-bar'
 
 export default {
   name: 'nav-bar',
+  
   props: {
     categories: Array,
     cart_badge: Boolean
   },
+
   components: {
-    SearchIcon, ShoppingCartIcon, ChevronDownIcon
+    SearchIcon,
+    ShoppingCartIcon,
+    ChevronDownIcon,
+    SearchBar
   }
 }
 </script>
@@ -100,6 +109,7 @@ export default {
   font-size: 24px;
   font-weight: 900;    
   padding: 0px 16px;
+  text-decoration: none;
 }
 
 .nav-bar .nav-item-right {
