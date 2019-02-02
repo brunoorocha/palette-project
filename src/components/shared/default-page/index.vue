@@ -1,8 +1,10 @@
 <template>
   <div class="page">
-    <nav-bar :categories="categories" />
+    <nav-bar :categories="categories" />    
     <div class="large-vspace"></div>
-    <slot></slot>
+    <div class="page-content">
+      <slot></slot>
+    </div>
   </div>
 </template>
 

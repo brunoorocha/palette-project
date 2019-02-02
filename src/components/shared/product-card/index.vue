@@ -2,7 +2,9 @@
 
 export default {
   name: 'ProductCard',
-  props: ['product'],
+  props: {
+    product: Object
+  }
 }
 
 </script>
@@ -37,11 +39,11 @@ export default {
     width: 100%;
     margin-bottom: 8px;       
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
   }
 
   .product-card .card-cover img {    
-    width: 100%;
+    width: 100%;    
     transition: .3s ease-out;
   } 
 

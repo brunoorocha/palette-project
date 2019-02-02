@@ -1,19 +1,22 @@
 <template>
   <div class="home">
     <default-page>
-
+      <product-collection :products="products" />
     </default-page>
   </div>
 </template>
 
 <script>
 import DefaultPage from '@/components/shared/default-page'
+import ProductCollection from '@/components/shared/product-collection'
 import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'home',  
+  
   components: {
-    DefaultPage
+    DefaultPage,
+    ProductCollection    
   },
   
   computed: {
