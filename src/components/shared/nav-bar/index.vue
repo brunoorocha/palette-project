@@ -7,8 +7,8 @@
 
       <div class="nav-item nav-item-right">
         <div class="nav-links">
-          <router-link to="login">login</router-link>
-          <router-link to="cart">
+          <router-link to="/login">login</router-link>
+          <router-link to="/cart">
             <shopping-cart-icon class="icon" />
             <div v-if="cart_badge" class="badge"></div>
           </router-link>

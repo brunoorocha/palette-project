@@ -61,6 +61,20 @@ const setProducts = ({ commit }, payload) => {
   commit(SET_PRODUCTS, { products })
 }
 
+const fetchProductForUri = ({ commit }, payload) => {
+  return new Promise(
+    (resolve, reject) => {
+      const product = products.filter(p => p.uri === payload.product_uri)      
+      if (product) {
+        resolve(product[0])
+      } else {
+        reject(new Error('No results'))
+      }
+    }
+  )
+}
+
 export default {
-  setProducts
+  setProducts,
+  fetchProductForUri
 }
