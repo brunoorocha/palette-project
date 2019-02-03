@@ -11,8 +11,8 @@
           <router-link to="cart">
             <shopping-cart-icon class="icon" />
             <div v-if="cart_badge" class="badge"></div>
-          </router-link>          
-          <search-bar />          
+          </router-link>
+          <search-bar />
         </div>
       </div>
     </div>
@@ -42,19 +42,18 @@
 </template>
 
 <script>
-import { SearchIcon, ShoppingCartIcon, ChevronDownIcon } from 'vue-feather-icons'
+import { ShoppingCartIcon, ChevronDownIcon } from 'vue-feather-icons'
 import SearchBar from '../search-bar'
 
 export default {
   name: 'nav-bar',
-  
+
   props: {
     categories: Array,
     cart_badge: Boolean
   },
 
   components: {
-    SearchIcon,
     ShoppingCartIcon,
     ChevronDownIcon,
     SearchBar
@@ -64,33 +63,33 @@ export default {
 
 <style>
 .nav-bar {
-  display: flex;    
+  display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
   width: 100%;
-  background-color: #ffffff;    
+  background-color: #ffffff;
 }
 
-.nav-bar .nav-bar-section {    
-  display: flex;    
-  flex-grow: 1;  
+.nav-bar .nav-bar-section {
+  display: flex;
+  flex-grow: 1;
   padding: 0px 16px;
   border-bottom: 1px solid #efefef;
   box-sizing: border-box;
   height: 56px;
-}  
+}
 
-.nav-bar .nav-bar-section .nav-bar-subsection {        
+.nav-bar .nav-bar-section .nav-bar-subsection {
   position: absolute;
   left: 0;
-  margin-top: 51px;        
-  width: 100vw;  
-  height: 42;    
-  border-bottom: 1px solid #efefef;    
-  display: none;    
+  margin-top: 51px;
+  width: 100vw;
+  height: 42;
+  border-bottom: 1px solid #efefef;
+  display: none;
   background-color: #ffffff;
 }
 
@@ -98,16 +97,16 @@ export default {
   display: flex;
   flex-grow: 1;
   flex-basis: 0;
-  align-items: center;        
+  align-items: center;
 }
 
 .nav-bar .nav-item-centered {
-  justify-content: center;   
+  justify-content: center;
 }
 
 .nav-bar .nav-item-left h1 {
   font-size: 24px;
-  font-weight: 900;    
+  font-weight: 900;
   padding: 0px 16px;
   text-decoration: none;
 }
@@ -118,24 +117,24 @@ export default {
 }
 
 .nav-bar .nav-links {
-  display: flex; 
+  display: flex;
 }
 
 .nav-bar .nav-links a {
-  display: flex;     
-  align-items: center;        
+  display: flex;
+  align-items: center;
   height: 56px;
-  padding: 0px 16px;    
-  font-size: 12px;    
+  padding: 0px 16px;
+  font-size: 12px;
   text-transform: uppercase;
-  text-decoration: none;   
+  text-decoration: none;
   -moz-transition: .3s ease-out;
-  transition: .3s ease-out;   
+  transition: .3s ease-out;
   box-sizing: border-box;
-  border-bottom: 2px solid transparent;  
+  border-bottom: 2px solid transparent;
 }
 
-.nav-bar .nav-links a:hover {    
+.nav-bar .nav-links a:hover {
   border-bottom: 2px solid #333333;
 }
 
@@ -145,7 +144,7 @@ export default {
   height: 8px;
   border-radius: 4px;
   background-color: #e74c3c;
-  position: absolute;  
+  position: absolute;
   margin-left: 16px;
   margin-top: -8px;
 }
@@ -154,7 +153,7 @@ export default {
   display: flex;
 }
 
-.nav-bar .nav-links a .icon {    
+.nav-bar .nav-links a .icon {
   width: 16px;
   height: 16px;
   stroke: currentColor;
@@ -164,59 +163,59 @@ export default {
   fill: none;
 }
 
-.nav-bar .nav-links a .icon-dropdown {    
+.nav-bar .nav-links a .icon-dropdown {
   margin-left: 8px;
 }
 
-.nav-bar .nav-bar-section-bottom,  
-.nav-bar .nav-bar-section-bottom .nav-links a  {    
-  height: 42px;    
+.nav-bar .nav-bar-section-bottom,
+.nav-bar .nav-bar-section-bottom .nav-links a  {
+  height: 42px;
 }
 
 .nav-bar .nav-bar-subsection .nav-links a {
-  display: flex;     
-  align-items: center;        
+  display: flex;
+  align-items: center;
   height: 56px;
-  padding: 0px 16px;    
-  font-size: 16px;    
+  padding: 0px 16px;
+  font-size: 16px;
   text-transform: none;
   font-weight: 400;
-  text-decoration: none;   
+  text-decoration: none;
   -moz-transition: .3s ease-out;
-  transition: .3s ease-out;   
-  border-bottom: 0px;  
+  transition: .3s ease-out;
+  border-bottom: 0px;
   color: #999999;
 }
 
 .nav-bar .nav-bar-subsection .nav-links a:hover {
-  color: #333333;  
+  color: #333333;
 }
 
 @media only screen and (max-width: 767px) and (min-width: 540px) {
-  .nav-bar .nav-bar-section {    
+  .nav-bar .nav-bar-section {
     height: 42px;
   }
 
   .nav-bar .nav-item-left h1 {
-    font-size: 20px;    
+    font-size: 20px;
   }
 
-  .nav-bar .nav-bar-section {    
-    padding: 0px; 
+  .nav-bar .nav-bar-section {
+    padding: 0px;
   }
 }
 
 @media only screen and (max-width: 540px) {
-  .nav-bar .nav-bar-section {    
+  .nav-bar .nav-bar-section {
     height: 42px;
   }
 
   .nav-bar .nav-item-left h1 {
-    font-size: 20px;    
+    font-size: 20px;
   }
 
-  .nav-bar .nav-bar-section {    
-    padding: 0px; 
+  .nav-bar .nav-bar-section {
+    padding: 0px;
   }
 }
 

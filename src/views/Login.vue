@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <default-page title="Login">
-      <h1>Login</h1>      
+      <h1>Login</h1>
     </default-page>
   </div>
 </template>
@@ -10,10 +10,10 @@
 import DefaultPage from '@/components/shared/default-page'
 
 export default {
-  name: 'login',  
-  
+  name: 'login',
+
   components: {
-    DefaultPage,    
+    DefaultPage
   }
 }
 </script>

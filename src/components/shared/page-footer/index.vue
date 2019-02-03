@@ -1,6 +1,6 @@
 <template>
   <div class="page-footer">
-    <p>Designed and developed by Bruno Rocha</p>    
+    <p>Designed and developed by Bruno Rocha</p>
   </div>
 </template>
 

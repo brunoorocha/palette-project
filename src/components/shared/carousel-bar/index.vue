@@ -1,10 +1,10 @@
-<template>  
+<template>
   <div class="carousel-bar">
     <div class="carousel-bar-content">
       <div class="carousel-bar-control">
         <chevron-left-icon />
       </div>
-      
+
       <div class="text-display">
         🔒 Produtos de primeira qualidade com preço justo!
       </div>
@@ -24,7 +24,7 @@ export default {
   components: {
     ChevronLeftIcon,
     ChevronRightIcon
-  }  
+  }
 }
 </script>
 
@@ -57,8 +57,8 @@ export default {
 .carousel-bar .carousel-bar-content .text-display {
   display: flex;
   align-items: center;
-  justify-content: center;  
-  flex-grow: 1;  
+  justify-content: center;
+  flex-grow: 1;
   height: 56px;
 }
 

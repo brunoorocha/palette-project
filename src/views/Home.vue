@@ -12,23 +12,23 @@ import ProductCollection from '@/components/shared/product-collection'
 import { mapState, mapActions } from 'vuex'
 
 export default {
-  name: 'home',  
-  
+  name: 'home',
+
   components: {
     DefaultPage,
-    ProductCollection    
-  },
-  
-  computed: {
-    ...mapState('Product', ['products']),
-  },
-  
-  methods: {
-    ...mapActions('Product', ['setProducts']),
+    ProductCollection
   },
 
-  mounted: function() {
-    this.setProducts()    
+  computed: {
+    ...mapState('Product', ['products'])
+  },
+
+  methods: {
+    ...mapActions('Product', ['setProducts'])
+  },
+
+  mounted: function () {
+    this.setProducts()
   }
 }
 </script>

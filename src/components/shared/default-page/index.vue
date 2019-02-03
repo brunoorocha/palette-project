@@ -1,9 +1,9 @@
 <template>
   <div class="page">
-    <nav-bar :categories="categories" :cart_badge="true" />    
+    <nav-bar :categories="categories" :cart_badge="hasProducts" />
     <div class="large-vspace"></div>
     <carousel-bar />
-    
+
     <div class="page-content">
       <slot></slot>
     </div>
@@ -17,10 +17,10 @@
 import NavBar from '../nav-bar'
 import CarouselBar from '../carousel-bar'
 import PageFooter from '../page-footer'
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
-  name: 'default-page',  
+  name: 'default-page',
 
   props: {
     title: String
@@ -33,14 +33,15 @@ export default {
   },
 
   computed: {
+    ...mapGetters('Cart', ['hasProducts']),
     ...mapState('Category', ['categories'])
   },
 
   methods: {
-    ...mapActions('Category', ['setCategories'])    
+    ...mapActions('Category', ['setCategories'])
   },
 
-  mounted: function() {
+  mounted: function () {
     this.setCategories()
     document.title = this.title
   }
@@ -49,5 +50,5 @@ export default {
 </script>
 
 <style>
-  
+
 </style>

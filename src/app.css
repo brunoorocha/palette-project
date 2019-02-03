@@ -48,10 +48,18 @@ a {
   .page-content .page-row {    
     padding: 0px 16px;    
   }
+
+  .large-vspace {    
+    height: 84px;
+  }
 }
 
 @media only screen and (max-width: 540px) {
   .page-content .page-row {    
     padding: 0px 16px;    
+  }
+
+  .large-vspace {    
+    height: 84px;
   }
 }
