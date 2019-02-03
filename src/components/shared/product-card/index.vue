@@ -11,7 +11,7 @@ export default {
 
 <template>
   <div class="product-card">
-    <a :href=" '/#/product/'+ product.uri ">
+    <a :href=" '/#/products/'+ product.uri ">
       <div class="card-cover">
         <img :src="product.image_url" :alt="product.name">
       </div>

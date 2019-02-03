@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Product from '@/models/product/store'
-import Category from '@/models/category/store'
-import Cart from '@/models/cart/store'
+import Product from './modules/product/store'
+import Category from './modules/category/store'
+import Cart from './modules/cart/store'
 
 Vue.use(Vuex)
 

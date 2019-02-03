@@ -21,6 +21,13 @@ export default new Router({
       path: '/cart',
       name: 'cart',
       component: () => import('@/views/Cart.vue')
+    },
+    {
+      path: '/products/:product_uri',
+      name: 'product',
+      // set url params in component props
+      props: true,
+      component: () => import('@/views/Product.vue')
     }
   ]
 })
