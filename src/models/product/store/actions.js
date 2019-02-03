@@ -1,5 +1,5 @@
 
-import types from './mutation-types'
+import { SET_PRODUCTS } from './mutation-types'
 
 const products = [
   {
@@ -58,7 +58,7 @@ const products = [
 ]
 
 const setProducts = ({ commit }, payload) => {
-  commit(types.SET_PRODUCTS, { products })
+  commit(SET_PRODUCTS, { products })
 }
 
 export default {
