@@ -1,9 +1,9 @@
 <template>
-  <default-page :title="product_uri">
+  <default-page :title="title">
 
       <div class="page-content">
         <div class="page-row">
-          <h1>Produto {{ product_uri }}</h1>
+          <product-info v-if="product" :product="product" />
         </div>
       </div>
 
@@ -12,15 +12,16 @@
 
 <script>
 import DefaultPage from '@/components/shared/default-page'
+import ProductInfo from '@/components/shared/product-info'
 import { mapActions } from 'vuex'
 
 export default {
   name: 'product',
-  
-  data: function() {
+
+  data: function () {
     return {
       product: null,
-      title: this.product_uri
+      title: ''
     }
   },
 
@@ -29,20 +30,21 @@ export default {
   },
 
   components: {
-    DefaultPage
+    DefaultPage,
+    ProductInfo
   },
 
   methods: {
     ...mapActions('Product', ['fetchProductForUri'])
   },
 
-  mounted: function() {
+  mounted: function () {
     this.fetchProductForUri({ product_uri: this.product_uri })
-    .then(product => { 
-      this.product = product 
-      this.title = product.name
-    })
-    .catch(error => console.log(error))
+      .then(product => {
+        this.product = product
+        this.title = product.name
+      })
+      .catch(error => console.log(error))
   }
 }
 </script>

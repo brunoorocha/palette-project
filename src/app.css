@@ -4,7 +4,8 @@
 }
 
 #app,
-input {
+input,
+select {
   font-family: 'Lato', sans-serif;
   color: #333333;
 }
@@ -14,6 +15,33 @@ a {
   color: #333333;
   text-decoration: none;
 }
+
+.title-1 {
+  font-size: 32px;
+  font-weight: 900;  
+  margin-bottom: 8px;
+}
+
+.title-2 {
+  font-size: 24px;
+  font-weight: 300;  
+  margin-bottom: 8px;
+}
+
+.title-3 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.subtitle-uppercased {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
 
 .large-vspace {
   display: flex;
@@ -29,6 +57,8 @@ a {
 .page-content .page-row {
   display: flex;  
   width: 100%;  
+  max-width: 1366px;  
+  margin: 0 auto;
   padding: 0px 32px;
   box-sizing: border-box;
 }
@@ -42,6 +72,12 @@ a {
 
 .page-content .page-row-vertical {
   flex-direction: column;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0px;
 }
 
 @media only screen and (max-width: 767px) and (min-width: 540px) {

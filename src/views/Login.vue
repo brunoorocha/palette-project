@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <default-page title="Login">
-      
+
       <div class="page-content">
         <div class="page-row">
           <h1>Login</h1>

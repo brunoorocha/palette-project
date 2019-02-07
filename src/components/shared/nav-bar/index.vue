@@ -1,18 +1,20 @@
 <template>
   <div class="nav-bar">
     <div class="nav-bar-section">
-      <div class="nav-item nav-item-left">
-        <router-link to="/"><h1>Palette Store</h1></router-link>
-      </div>
+      <div class="nav-content">
+        <div class="nav-item nav-item-left">
+          <router-link to="/"><h1>Palette Store</h1></router-link>
+        </div>
 
-      <div class="nav-item nav-item-right">
-        <div class="nav-links">
-          <router-link to="/login">login</router-link>
-          <router-link to="/cart">
-            <shopping-cart-icon class="icon" />
-            <div v-if="cart_badge" class="badge"></div>
-          </router-link>
-          <search-bar />
+        <div class="nav-item nav-item-right">
+          <div class="nav-links">
+            <router-link to="/login">login</router-link>
+            <router-link to="/cart">
+              <shopping-cart-icon class="icon" />
+              <div v-if="cart_badge" class="badge"></div>
+            </router-link>
+            <search-bar />
+          </div>
         </div>
       </div>
     </div>
@@ -76,10 +78,18 @@ export default {
 .nav-bar .nav-bar-section {
   display: flex;
   flex-grow: 1;
-  padding: 0px 16px;
   border-bottom: 1px solid #efefef;
   box-sizing: border-box;
   height: 56px;
+}
+
+.nav-content {
+  display: flex;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
 }
 
 .nav-bar .nav-bar-section .nav-bar-subsection {
@@ -203,6 +213,10 @@ export default {
   .nav-bar .nav-bar-section {
     padding: 0px;
   }
+
+  .nav-content {
+    padding: 0;
+  }
 }
 
 @media only screen and (max-width: 540px) {
@@ -216,6 +230,10 @@ export default {
 
   .nav-bar .nav-bar-section {
     padding: 0px;
+  }
+
+  .nav-content {
+    padding: 0;
   }
 }
 

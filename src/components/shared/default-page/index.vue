@@ -41,9 +41,14 @@ export default {
     ...mapActions('Category', ['setCategories'])
   },
 
+  watch: {
+    title: function (newValue) {
+      document.title = this.title
+    }
+  },
+
   mounted: function () {
     this.setCategories()
-    document.title = this.title
   }
 
 }

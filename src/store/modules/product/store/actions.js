@@ -64,7 +64,7 @@ const setProducts = ({ commit }, payload) => {
 const fetchProductForUri = ({ commit }, payload) => {
   return new Promise(
     (resolve, reject) => {
-      const product = products.filter(p => p.uri === payload.product_uri)      
+      const product = products.filter(p => p.uri === payload.product_uri)
       if (product) {
         resolve(product[0])
       } else {
